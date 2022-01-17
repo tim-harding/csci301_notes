@@ -15,6 +15,11 @@
 \newcommand{\curly}[1]{\left\{ #1 \right\}}
 \newcommand{\soft}[1]{\left( #1 \right)}
 \newcommand{\hard}[1]{\left[ #1 \right]}
+\newcommand{\C}[2]{
+    \begin{pmatrix}
+        #1 \\ #2
+    \end{pmatrix}
+}
 
 \title{Formal Languages and Functional Programming Notes}
 \author{Tim Harding}
@@ -117,6 +122,44 @@
     $Q$
 \end{tabular}
 \end{center}
+
+\section*{Counting}
+
+\begin{center}
+    \begin{tabular}{|c||c|c|}
+        \hline
+        Replacement & Ordered          & Unordered          \\ \hline\hline
+        With        & $n^r$            & $\C{n + r - 1}{r}$ \\ \hline
+        Without     & ${}_n P_r$, $n!$ & $\C{n}{r}$         \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{align*}
+    _n P_r &= \frac{n!}{(n - r)!} \\
+    _n C_r &= \frac{_n P_r}{r!}
+\end{align*}
+\begin{align*}
+    X \subseteq B \implies |B - X| = |B| - |X|
+\end{align*}
+\begin{align*}
+    \C{n + 1}{k} = \C{n}{k - 1} + \C{n}{k}
+\end{align*}
+\begin{align*}
+    \C{n}{k} = \C{n}{n - k}
+\end{align*}
+\begin{align*}
+    |A \cup B| = |A| + |B| - |A \cap B|
+\end{align*}
+
+\begin{samepage}
+Suppose $n$ objects go in $k$ boxes $B_1, B_2, \cdots, B_k$.
+\begin{itemize}
+    \item $\exists B_m : |B_m| \geq \lceil \frac{n}{k} \rceil$
+    \item $\exists B_m : |B_m| \leq \lfloor \frac{n}{k} \rfloor$
+    \item $n > k \implies \exists B_m : |B_m| > 1$
+    \item $n < k \implies \exists B_m : |B_m| = 0$
+\end{itemize}
+\end{samepage}
 
 \end{multicols*}
 \end{document}
