@@ -21,5 +21,39 @@
 
 \begin{document}
 \begin{multicols*}{2}
-\end{multicols}
+
+\section*{Sets}
+
+\begin{align*}
+    A \subseteq B \quad \rightarrow \quad \forall a \in A, a \in B
+\end{align*}
+\begin{align*}
+    A \times B = \curly{(a,b) : (a \in A) \wedge (b \in B)}
+\end{align*}
+\begin{align*}
+    |A \times B| = |A| \times |B|
+\end{align*}
+\begin{align*}
+    \mathcal{P}(A) = \curly{X : X \subseteq A}
+\end{align*}
+\begin{align*}
+    |A| = n \quad \rightarrow \quad |\mathcal{P}(A)| = 2^n
+\end{align*}
+\begin{align*}
+    A \cup B &= \curly{x : (x \in A) \vee (x \in B)} \\
+    A \cap B &= \curly{x : (x \in A) \wedge (x \in B)} \\
+    A - B &= \curly{x : (x \in A) \wedge (x \notin B)}
+\end{align*}
+\begin{align*}
+    \bar{A} = U - A
+\end{align*}
+\begin{align*}
+    \bigcup_{i = 1}^n A_i &= A_1 \cup A_2 \cup \cdots \cup A_n \\
+    \bigcap_{i = 1}^n A_i &= A_1 \cap A_2 \cap \cdots \cap A_n
+\end{align*}
+\begin{align*}
+    \forall a, b \in \mathbb{Z},\ b > 0,\ \exists q, r \in \mathbb{Z}\ :\ (a = qb + r) \wedge (0 \leq r < b)
+\end{align*}
+
+\end{multicols*}
 \end{document}
