@@ -55,5 +55,68 @@
     \forall a, b \in \mathbb{Z},\ b > 0,\ \exists q, r \in \mathbb{Z}\ :\ (a = qb + r) \wedge (0 \leq r < b)
 \end{align*}
 
+\section*{Logic}
+
+\textbf{Statement:} A sentence or expression that is definitely true or false.
+
+\textbf{Open sentence:} A sentence whose truth depends on one or more variables.
+
+\begin{center}
+    \begin{tabular}{| l | l || l |}
+    \hline
+    P     &     Q & $P \implies Q$ \\ \hline\hline
+    false & false & true           \\ \hline
+    false & true  & true           \\ \hline
+    true  & false & false          \\ \hline
+    true  & true  & true           \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{| l | l || l |}
+    \hline
+    P     &     Q & $P \Leftrightarrow Q$ \\ \hline\hline
+    false & false & true                  \\ \hline
+    false & true  & false                 \\ \hline
+    true  & false & false                 \\ \hline
+    true  & true  & true                  \\ \hline
+    \end{tabular}
+\end{center}
+
+\begin{align*}
+    \sim (P \wedge Q) &= (\sim P) \vee (\sim Q) \\
+    \sim (P \vee Q) &= (\sim P) \wedge (\sim Q)
+\end{align*}
+\begin{align*}
+    P \implies Q\ =\ (\sim Q) \implies (\sim P)
+\end{align*}
+\begin{align*}
+    \sim (\forall x, P(x))\ &=\ \exists x, \sim P(x) \\
+    \sim (\exists x, P(x))\ &=\ \forall x, \sim P(x)
+\end{align*}
+\begin{align*}
+    \sim (P \implies Q)\ = P \wedge \sim Q
+\end{align*}
+
+\begin{center}
+\begin{tabular}{l}
+    $P \implies Q$ \\
+    $P$ \\ \hline
+    $Q$
+\end{tabular}
+\qquad
+\begin{tabular}{l}
+    $P \implies Q$ \\
+    $\sim Q$ \\ \hline
+    $\sim P$
+\end{tabular}
+\qquad
+\begin{tabular}{l}
+    $P \vee Q$ \\
+    $\sim P$ \\ \hline
+    $Q$
+\end{tabular}
+\end{center}
+
 \end{multicols*}
 \end{document}
