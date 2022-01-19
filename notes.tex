@@ -190,7 +190,7 @@ These cases show that $Q$.
 
 \textit{Proof:} Suppose $\sim Q$.
 
-\vdots
+$\vdots$
 
 Therefore $\sim P$.
 
@@ -219,6 +219,36 @@ Therefore $C \wedge \sim C$.
 \textit{Proposition:} $\exists x, P(x)$.
 
 Show that the statement is true by using some value of $x$ as an example. This is a \textit{constructive} proof. If you do not show a witness that proves the statement, the proof is \textit{non-constructive}.
+
+\subsection*{Proofs involving sets}
+
+\subsubsection*{Set inclusion}
+\begin{align*}
+    P(a) \implies a \in {x:P(x)}
+\end{align*}
+\begin{align*}
+    (a \in S) \wedge P(a) \implies a \in {x \in S : P(x)}
+\end{align*}
+
+\subsubsection*{$A \subseteq B$ direct}
+
+\textit{Proof:} Suppose $a \in A$.
+
+$\vdots$
+
+Therefore $a \in B$. Thus $a \in A$ implies $a \in B$, so it follows that $A \subseteq B$.
+
+\subsubsection*{$A \subseteq B$ contrapositive}
+
+\textit{Proof:} Suppose $a \notin B$.
+
+$\vdots$
+
+Therefore $a \notin A$. Thus $a \notin B$ implies $a \notin A$, so it follows that $A \subseteq B$.
+
+\subsubsection*{$A = B$}
+\textit{Proof:} Prove both that $A \subseteq B$ and $B \subseteq A$. Therefore, since $A \subseteq B$ and $B \subseteq A$, it follows that $A = B$.
+
 
 \end{multicols*}
 \end{document}
