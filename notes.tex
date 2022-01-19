@@ -263,5 +263,31 @@ To disprove $P(x) \implies Q(x)$, give an example $x$ such that $P(x) \wedge \si
 
 Show that $P \implies C \wedge \sim C$.
 
+\section*{Induction}
+
+Consists of a \textit{basis step} and an \textit{inductive step}. The assumption that $S_k$ is true in the inductive step is the \textit{inductive hypothesis}. To apply induction for all $\mathbb{Z}$, we must show $(S_k \implies S_{k+1}) \wedge (S_k \implies S_{k-1})$. An occasionally convenient alternative to $S_k \implies S_{k+1}$ is $S_{k-1} \implies S_k$.
+
+\subsection*{Induction outline}
+
+\textit{Proposition:} The statements $S_1, S_2, S_3, \ldots$ are all true.
+
+\textit{Proof:} (Induction)
+\begin{enumerate}
+    \item Prove that the first statement $S_1$ is true.
+    \item Given any integer $k \geq 1$, prove that $S_k \implies S_{k + 1}$.
+\end{enumerate}
+It follows by mathematical induction that every $S_n$ is true.
+
+\subsection*{Strong induction outline}
+Useful when $S_k \implies S_{k+1}$ is difficult to establish.
+
+\textit{Proposition:} The statements $S_1, S_2, S_3, S_4, \ldots$ are all true.
+
+\textit{Proof:} (Strong induction)
+\begin{enumerate}
+    \item Prove the first statement $S_1$, or the first several $S_n$ as needed.
+    \item Given any integer $k \geq 1$, prove $(S_1 \wedge S_2 \wedge S_3 \wedge \cdots \wedge S_k) \implies S_{k+1}$.
+\end{enumerate}
+
 \end{multicols*}
 \end{document}
