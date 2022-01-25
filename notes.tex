@@ -13,13 +13,14 @@
 \setlength{\parskip}{1em}
 
 \newcommand{\curly}[1]{\left\{ #1 \right\}}
-\newcommand{\soft}[1]{\left( #1 \right)}
+\newcommand{\round}[1]{\left( #1 \right)}
 \newcommand{\hard}[1]{\left[ #1 \right]}
 \newcommand{\C}[2]{
     \begin{pmatrix}
         #1 \\ #2
     \end{pmatrix}
 }
+\newcommand{\iif}{\Longleftrightarrow}
 
 \title{Formal Languages and Functional Programming Notes}
 \author{Tim Harding}
@@ -69,7 +70,7 @@
 \begin{center}
     \begin{tabular}{| l | l || l |}
     \hline
-    P     &     Q & $P \implies Q$ \\ \hline\hline
+    P     & Q     & $P \implies Q$ \\ \hline\hline
     false & false & true           \\ \hline
     false & true  & true           \\ \hline
     true  & false & false          \\ \hline
@@ -80,11 +81,11 @@
 \begin{center}
     \begin{tabular}{| l | l || l |}
     \hline
-    P     &     Q & $P \Leftrightarrow Q$ \\ \hline\hline
-    false & false & true                  \\ \hline
-    false & true  & false                 \\ \hline
-    true  & false & false                 \\ \hline
-    true  & true  & true                  \\ \hline
+    P     & Q     & $P \iif Q$ \\ \hline\hline
+    false & false & true       \\ \hline
+    false & true  & false      \\ \hline
+    true  & false & false      \\ \hline
+    true  & true  & true       \\ \hline
     \end{tabular}
 \end{center}
 
@@ -204,7 +205,7 @@ $\vdots$
 Therefore $C \wedge \sim C$.
 
 \subsection*{Biconditional statements}
-\textit{Proposition:} $P \Leftrightarrow Q$.
+\textit{Proposition:} $P \iif Q$.
 
 \textit{Proof:} Prove both $P \implies Q$ and $Q \implies P$.
 
@@ -308,6 +309,87 @@ Useful when $S_k \implies S_{k+1}$ is difficult to establish.
     [a] +      [b] &= [a + b] \\
     [a] \times [b] &= [a \times b] \\
 \end{align*}
+
+\section*{Functions}
+$f: A \rightarrow B$ is a relation $f \subseteq A \times B$ such that, for all $a \in A$, there exists exactly one tuple $(a, b)$.
+
+$(a,b) \in f \iif f(a) = b$
+
+Range is a subset of the codomain.
+
+\begin{align*}
+    &\textbf{Injective:} & &\forall a,b \in A,\ a \neq b \implies f(a) \neq f(b) \\
+    &\textbf{Surjective:} & &\forall b \in B,\ \exists a \in A : f(a) = b
+\end{align*}
+\textbf{Bijective:} Both injective and surjective.
+
+Injective means one-to-one, no output is repeated.
+
+Surjective means onto, the codomain is saturated.
+
+Given finite sets $A$ and $B$ and the function $f: A \rightarrow B$,
+\begin{enumerate}
+    \item $|A| > |B| \implies f$ is not injective
+    \item $|A| > |B| \implies f$ is not surjective
+\end{enumerate}
+
+Functions are associative but not commutative.
+
+\begin{align*}
+    R^{-1} = {(y,x) : (x,y) \in R}
+\end{align*}
+\begin{align*}
+    i_A (x) = x
+\end{align*}
+\begin{align*}
+    (f \text{ is bijective}) \iif (f^{-1} \text{ is a function})
+\end{align*}
+Given $f: A \rightarrow B$,
+\begin{align*}
+    f \circ f^{-1} &= i_A \\
+    f^{-1} \circ f &= i_B \\
+\end{align*}
+Given $f: A \rightarrow B$ and $X \subseteq A$,
+\begin{align*}
+    f(X) = \curly{f(x) : x \in X}
+\end{align*}
+Given $f: A \rightarrow B$, $X \subseteq A$, and $Y \subseteq B$,
+\begin{align*}
+    &\textbf{Image:} & f(X) &= \curly{f(x) : x \in X} \subseteq B \\
+    &\textbf{Preimage:} & f^{-1}(Y) &= \curly{x \in A : f(x) \in Y} \subseteq A
+\end{align*}
+Image means the destination of $X$ under $f$.
+
+Preimage means the source of $Y$ under $f$.
+
+Given $f: A \rightarrow B$, $W, X \subseteq A$, and $Y, Z \subseteq B$, then
+\begin{align*}
+    f(W \cap X) &\subseteq f(W) \cap f(X) \\
+    f(W \cup X) &= f(W) \cup f(X) \\
+    X &\subseteq f^{-1}\round{f(X)} \\
+    f^{-1}(Y \cup Z) &= f^{-1}(Y) \cup f^{-1}(Z) \\
+    f^{-1}(Y \cap Z) &= f^{-1}(Y) \cap f^{-1}(Z) \\
+    f\round{f^{-1}(Y)} &\subseteq Y
+\end{align*}
+
+\subsection*{Injective direct proof}
+Suppose $a, a' \in A$ and $a \neq a'$.
+
+$\vdots$
+
+Therefore $f(a) \neq f(a')$.
+
+\subsection*{Injective contrapositive proof}
+Suppose $a, a' \in A$ and $f(a) = f(a')$.
+
+$\vdots$
+
+Therefore, $a = a'$.
+
+\subsection*{Surjective proof}
+Suppose $b \in B$.
+
+Show that $\exists a \in A : f(a) = b$.
 
 \end{multicols*}
 \end{document}
