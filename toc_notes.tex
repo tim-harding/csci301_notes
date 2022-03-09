@@ -25,9 +25,31 @@
 \author{Tim Harding}
 
 \begin{document}
-\begin{multicols*}{2}
 
-Things and stuff
+\begin{center}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Regular & Finite automaton & Regular expressions \\ \hline
+        Context-Free & Pushdown automaton & Grammar \\ \hline
+        Decidable & Turing machine & Code \\ \hline
+    \end{tabular}
+\end{center}
 
-\end{multicols*}
+\section*{Regular}
+\subsection*{Deterministic finite automaton}
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        $Q$ & states \\ \hline
+        $\Sigma$ & alphabet \\ \hline
+        $\delta : Q \times \Sigma \rightarrow Q$ & transition function \\ \hline
+        $q \in Q$ & start state \\ \hline
+        $M = (Q, \Sigma, \delta, q, F)$ & Finite automaton \\ \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Nondeterministic finite automaton}
+\section*{Context-Free}
+\section*{Decidable}
+
 \end{document}
