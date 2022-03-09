@@ -36,14 +36,32 @@
 \end{center}
 
 \section*{Regular}
+Finite automata can be expressed the following ways:
+\begin{enumerate}
+    \item A transition table, with states on one axis and alphabet characters on the other
+    \item A graph with states as nodes, transitions on alphabet characters as edges, and acceptance states specially demarcated
+    \item A regular expression
+\end{enumerate}
+
+\subsection*{Regular operations}
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        Union & $A \cup B$ \\ \hline
+        Concatenation & $AB$ \\ \hline
+        Kleene closure & $A*$ \\ \hline
+    \end{tabular}
+\end{center}
+
 \subsection*{Deterministic finite automaton}
 \begin{center}
     \begin{tabular}{|l|l|}
         \hline
-        $Q$ & states \\ \hline
-        $\Sigma$ & alphabet \\ \hline
-        $\delta : Q \times \Sigma \rightarrow Q$ & transition function \\ \hline
-        $q \in Q$ & start state \\ \hline
+        $Q$ & States \\ \hline
+        $\Sigma$ & Alphabet \\ \hline
+        $\delta : Q \times \Sigma \rightarrow Q$ & Transition function \\ \hline
+        $q \in Q$ & Start state \\ \hline
+        $F \subseteq Q$ & Accept states \\ \hline
         $M = (Q, \Sigma, \delta, q, F)$ & Finite automaton \\ \hline
     \end{tabular}
 \end{center}
