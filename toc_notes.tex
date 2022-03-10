@@ -87,6 +87,14 @@ These are similiar to deterministic finite automata, with the following differen
 \end{enumerate}
 If any legal series of transitions lands on an accept state, the string is accepted. The transition table includes $\epsilon$ as a character to transition on, and the destination is a set of possible states. If the destination is the null set, the string is rejected by that branch.
 
+\subsection*{Pumping lemma}
+\begin{enumerate}
+    \item $|y| \geq 1$
+    \item $|xy| \leq p$
+    \item $\forall i \in \mathbb{N}_0, \ xy^iz \in L$
+\end{enumerate}
+Note that $y$ must be in the first $p$ characters of the choice of $w$.
+
 \section*{Context-Free}
 \section*{Decidable}
 
