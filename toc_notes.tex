@@ -145,6 +145,28 @@ If any possible branch accepts the string, the automaton accepts the string.
 
 \section*{Decidable}
 
+\subsection*{Turing Machine}
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        $\Sigma$ & Input alphabet \\ \hline
+        $\Gamma$ & Tape alphabet \\ \hline
+        $Q$ & States \\ \hline
+        $q \in Q$ & Start state \\ \hline
+        $q_\text{accept} \in Q$ & Accept state \\ \hline
+        $q_\text{reject} \in Q$ & Reject state \\ \hline
+        $\delta : Q \times \Gamma^k \rightarrow Q \times \Gamma^k \times \curly{L, R, N}^k$ & Transition function \\ \hline
+        $M = (\Sigma, \Gamma, Q, \delta, q, q_\text{accept}, q_\text{reject})$ & Turing machine \\ \hline
+    \end{tabular}
+\end{center}
+The machine contains $k \in mathbb{N}$ tapes. The first tape contains the input string and begins with the read head at its leftmost position. The other tapes are filled with $\square$. At each step, the transition function takes the following actions in response to the current state and the symbols under the read heads:
+\begin{enumerate}
+    \item Write a new symbol at the read head of each tape
+    \item Move each read head left, right, or not at all
+    \item Transition to a new state
+\end{enumerate}
+The machine terminates when it enters either the $q_\text{accept}$ or the $q_\text{reject}$ state. A string is accepted if the machine terminates in the $q_\text{accept}$ state.
+
 % Todo: Intuitions for language types
 
 \end{document}
