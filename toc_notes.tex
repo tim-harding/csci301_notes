@@ -109,7 +109,7 @@ Note that $y$ must be in the first $p$ characters of the choice of $w$.
     \end{tabular}
 \end{center}
 
-\subsection*{Deterministic Pushdown Automata}
+\subsection*{Pushdown Automata}
 \begin{center}
     \begin{tabular}{|l|l|}
         \hline
@@ -129,7 +129,12 @@ The stack starts off as \$. At each step, the tape head is read and the top of t
 \end{enumerate}
 The automaton terminates when the stack is empty. The string is accepted it if the automaton terminates on the blank character $\square$ immediately following the string.
 
-\subsection*{Nondeterministic Pushdown Automata}
+\subsubsection*{Nondeterministic Pushdown Automata}
+These are the same as their deterministic variants, except that the transition function signature changes to the following:
+\begin{align*}
+    \delta : Q \times (\Sigma \cup \curly{\square}) \times \Gamma \rightarrow \mathcal{P}_f(Q \times \curly{N,R} \times \Gamma*)
+\end{align*}
+If any possible branch accepts the string, the automaton accepts the string.
 
 \section*{Decidable}
 
