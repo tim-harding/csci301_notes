@@ -62,11 +62,31 @@ Finite automata can be expressed the following ways:
         $\delta : Q \times \Sigma \rightarrow Q$ & Transition function \\ \hline
         $q \in Q$ & Start state \\ \hline
         $F \subseteq Q$ & Accept states \\ \hline
-        $M = (Q, \Sigma, \delta, q, F)$ & Finite automaton \\ \hline
+        $M = (Q, \Sigma, \delta, q, F)$ & Automaton \\ \hline
     \end{tabular}
 \end{center}
 
 \subsection*{Nondeterministic finite automaton}
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        $Q$ & States \\ \hline
+        $\Sigma$ & Alphabet \\ \hline
+        $\delta : Q \times \Sigma_\epsilon \rightarrow \mathcal{P}(Q)$ & Transition function \\ \hline
+        $q \in Q$ & Start state \\ \hline
+        $F \subseteq Q$ & Accept states \\ \hline
+        $M = (Q, \Sigma, \delta, q, F)$ & Automaton \\ \hline
+    \end{tabular}
+\end{center}
+
+These are similiar to deterministic finite automata, with the following differences:
+\begin{enumerate}
+    \item They can sporadically transition on $\epsilon$
+    \item They may transition on a symbol in multiple ways
+    \item They may not transition on a symbol at all
+\end{enumerate}
+If any legal series of transitions lands on an accept state, the string is accepted. The transition table includes $\epsilon$ as a character to transition on, and the destination is a set of possible states. If the destination is the null set, the string is rejected by that branch.
+
 \section*{Context-Free}
 \section*{Decidable}
 
