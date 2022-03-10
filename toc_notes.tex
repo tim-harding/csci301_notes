@@ -109,6 +109,26 @@ Note that $y$ must be in the first $p$ characters of the choice of $w$.
     \end{tabular}
 \end{center}
 
+\subsection*{Deterministic Pushdown Automaton}
+\begin{center}
+    \begin{tabular}{|l|l|}
+        \hline
+        $\Sigma$ & Tape alphabet \\ \hline
+        $\Gamma$ & Stack alphabet \\ \hline
+        $Q$ & States \\ \hline
+        $q \in Q$ & Start state \\ \hline
+        $\delta : Q \times (\Sigma \cup \curly{\square}) \times \Gamma \rightarrow Q \times \curly{N, R} \times \Gamma*$ & Transition function \\ \hline
+        $M = (\Sigma, \Gamma, Q, \delta, q)$ & Automaton \\ \hline
+    \end{tabular}
+\end{center}
+The stack starts off as \$. At each step, the tape head is read and the top of the stack is popped off. These are passed along with the current state to the transition function, which will take the following actions:
+\begin{enumerate}
+    \item Move the tape head right or stay put
+    \item Push any number of stack alphabet characters onto the stack
+    \item Choose a new state
+\end{enumerate}
+The automaton terminates when the stack is empty. The string is accepted it if the automaton terminates on the blank character $\square$ immediately following the string.
+
 \section*{Decidable}
 
 % Todo: Intuitions for language types
