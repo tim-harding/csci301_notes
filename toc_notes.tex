@@ -35,6 +35,13 @@
     \end{tabular}
 \end{center}
 
+As a useful intuition for each language class:
+\begin{enumerate}
+    \item Default to regular
+    \item If the language requires counting to some non-prespecified number, it bumps up to context-free.
+    \item If the language requires relative counts of nonadjacent elements or more than two adjacent elements, it bumps up to decidable. Context-free languages can only perform addition and subtraction.
+\end{enumerate}
+
 \section*{Regular}
 Finite automata can be expressed the following ways:
 \begin{enumerate}
@@ -52,6 +59,7 @@ Finite automata can be expressed the following ways:
         Kleene closure & $A*$ \\ \hline
     \end{tabular}
 \end{center}
+These languages are also closed under complement and intersection, where context-free languages are not.
 
 \subsection*{Deterministic Finite Automata}
 \begin{center}
@@ -169,7 +177,5 @@ The machine terminates when it enters either the $q_\text{accept}$ or the $q_\te
 
 \subsection*{Halting Problem}
 Define a machine $M$ that takes a program as input and halts if and only if its input program does not halt. Feeding $M$ to itself, $M$ must do the opposite of itself, a contradiction.
-
-% Todo: Intuitions for language types
 
 \end{document}
